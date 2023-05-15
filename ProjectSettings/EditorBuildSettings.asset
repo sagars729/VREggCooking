@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/DemoGrassFlowers.unity
+    guid: 679e28dd92e786342b7944447228f70c
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 403c34fc62910484da415c8958700264,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 91b6840791b354f428bf0fa5072c5033,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: a707a2855646b421eafb7fe2fb5618e5,
+      type: 2}

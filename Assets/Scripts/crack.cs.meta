@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 688e9486ad26c4ed9938b6e4ddf2d75f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - crackEggAudio: {fileID: 8300000, guid: 4f772689db55042c58a382fa9d23a965, type: 3}
+  - breakEggAudio: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
