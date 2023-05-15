@@ -17,6 +17,9 @@ public class crack : MonoBehaviour
     private bool breaking = false;
     private GameObject pan;
 
+    public ParticleSystem eggWhite;
+    public ParticleSystem eggYolk;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,12 +35,19 @@ public class crack : MonoBehaviour
             if (breakable && dist <= 0.2) {
                 breakable = false;
                 breaking = true;
-            } else if (breaking && dist >= 0.5) {
+            } else if (breaking && dist >= 0.25) {
                 audio.clip = breakEggAudio;
                 audio.Play();
+                // eggWhite.transform.position = transform.position;
+                // eggYolk.transform.position = transform.position;
+
+                eggWhite.Play();
+                eggYolk.Play();
                 breaking = false;
             } else if (!breakable && !breaking){
                 if(!audio.isPlaying) {
+                    eggWhite.GetComponent<Heat>().StartCooking(false);
+                    eggYolk.GetComponent<Heat>().StartCooking(true);
                     pan.GetComponent<sizzle>().Sizzle(0.1f, 0.05f);
                     gameObject.SetActive(false);
                 }
@@ -47,6 +57,9 @@ public class crack : MonoBehaviour
     }
 
     private void crackEgg() {
+        eggWhite.Clear();
+        eggYolk.Clear();
+
         audio.clip = crackEggAudio;
         audio.Play();
         cracks += 1;
@@ -71,29 +84,4 @@ public class crack : MonoBehaviour
             crackEgg();
         }
     }
-
-    // void Update()
-    // {
-    // 	if (OVRInput.GetDown(OVRInput.RawButton.A)) {
-    //         // hide the omlette
-    //         omlette.GetComponent<Renderer>().enabled = false;
-
-    // 		// crack the egg
-    // 		audio.clip = crackEggAudio;
-    // 		audio.Play();
-    // 	} else if (OVRInput.GetDown(OVRInput.RawButton.B)) {
-    // 		// break the egg
-    // 		audio.clip = breakEggAudio;
-    // 		audio.Play();
-
-    //         // show the omlette 
-    //         omlette.GetComponent<Renderer>().enabled = true;
-
-    //         // commence sizzling
-    //         oil.GetComponent<sizzle>().Sizzle(0.1f, 0.05f);
-
-    //         // debug
-    //         // audio.Play();
-    // 	}
-    // }
 }

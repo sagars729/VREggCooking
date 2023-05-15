@@ -54,7 +54,8 @@ public class sizzle : MonoBehaviour
     		if (remaining <= 0) {
     			sizzling = false;
     		} else {
-    			oil.transform.localScale = oilRemaining*initScale;
+    			oil.transform.localScale = new Vector3(
+                    initScale.x, oilRemaining*initScale.y, initScale.z);
     			audio.volume = remaining*initVolume;
     		}
     	}

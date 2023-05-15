@@ -31,7 +31,7 @@ public class RightController : MonoBehaviour
         if(grabbedObject == null)
         {
             Vector3 origin = transform.position;
-            float radius = 3.0f; // arbitrarily adjust this radius, maybe scale?
+            float radius = 0.25f; // arbitrarily adjust this radius, maybe scale?
 
             Collider[] hitColliders = Physics.OverlapSphere(origin, radius);
             hitColliders = hitColliders.OrderBy(x => Vector3.Distance(origin,x.transform.position)).ToArray();
